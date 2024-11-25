@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style: none;
+}
+.sr-only{
+    position: absolute;
+    text-indent: -9999px;
+}
+
+section{
+    position: relative;
+    width: 100%;
+    height: 0;
+}
+section > .dice-container{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.dice-container > .dice-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.dice-box > .dice{
+    display: flex;
+    height: 36vh;
+    position: relative;
+}
+.dice-box > .dice > img{
+    margin: auto;
+    position: relative;
+    width: 50%;
+}
+.dice-box > button{
+    margin: auto;
+    padding: 1% 20%;
+}
+.dice-box > .dice-num{
+    position: absolute;
+}
+.dice-num > li{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.dice-num > li > img{
+    margin: auto;
+    height: 25vh;
+    position: absolute;
+}
