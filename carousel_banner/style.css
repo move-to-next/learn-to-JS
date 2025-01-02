@@ -1,106 +1,135 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-li,ol,ul{
-    list-style: none;
+li,
+ol,
+ul {
+  list-style: none;
 }
-a{
-    color: black;
-    text-decoration: none;
+a {
+  color: black;
+  text-decoration: none;
 }
-body::-webkit-scrollbar{
-    display: none;
+body::-webkit-scrollbar {
+  display: none;
 }
-.sr-only{
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
 }
-section{
-    width: 100%;
-    height: 0;
-}
-
-section > .carousel{
-    position: relative;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
+section {
+  width: 100%;
+  height: 0;
 }
 
-.carousel > .btn{
-    position: absolute;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    padding: 0 2%;
-    z-index: 555;
+section > .carousel {
+  position: relative;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
 }
 
-.btn > [class*="-arrow"] > i{
-    position: relative;
-    color: #ffffff;
-    font-size: 32px;
-    cursor: pointer;
+.carousel > .btn {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 2%;
+  z-index: 555;
 }
 
-.btn > .img-dot{
-    display: flex;
-    justify-content:center;
-    align-items: flex-end;
-    width: 100%;
-    height: 100%;
-    padding: 2% 0;
-    z-index: 555;
+.btn > [class*="-arrow"] > i {
+  position: relative;
+  color: #ffffff;
+  font-size: 32px;
+  cursor: pointer;
 }
 
-.img-dot > ul{
-    display: flex;
-    justify-content: center;
+.btn > .img-dot {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  height: 100%;
+  padding: 2% 0;
+  z-index: 555;
 }
 
-.img-dot > ul > .play{
-    display: none;
+.img-dot > ul {
+  display: flex;
+  justify-content: center;
 }
 
-.img-dot > ul > li > div > [class*="-c"]{
-    font-size: 12px;
-    padding: 0 4px;
-    color: white;
-    cursor: pointer;
+.img-dot > ul > .play {
+  display: none;
 }
 
-.img-dot > ul > li > div > [class*="-p"]{
-    font-size: 18px;
-    color: white;
-    cursor: pointer;
+.img-dot > ul > li > div > [class*="-c"] {
+  font-size: 12px;
+  padding: 0 4px;
+  color: white;
+  cursor: pointer;
 }
 
-.carousel > .image{
-    position: relative;
-    display: flex;
-    z-index: 444;
+.img-dot > ul > li > div > [class*="-p"] {
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
 }
 
-.image > .img1{
-    position: relative;
-    width: 100vw
+.carousel > .image {
+  position: relative;
+  display: flex;
+  z-index: 444;
+  width: 300vw;
+  transition: all 2s;
+  animation: moving 20s infinite ease-in-out;
 }
-.image > .img2{
-    position: relative;
-    width: 100vw
+
+.image > .img1 {
+  position: relative;
+  width: 100vw;
 }
-.image > .img3{
-    position: relative;
-    width: 100vw
+.image > .img2 {
+  position: relative;
+  width: 100vw;
 }
-.image > div > img{
-    width: 100%;
+.image > .img3 {
+  position: relative;
+  width: 100vw;
+}
+.image > div > img {
+  width: 100%;
+}
+
+@keyframes moving {
+  0% {
+    margin-left: 0;
+  }
+  25% {
+    margin-left: 0;
+  }
+  35% {
+    margin-left: -100vw;
+  }
+  60% {
+    margin-left: -100vw;
+  }
+  70% {
+    margin-left: -200vw;
+  }
+  95% {
+    margin-left: -200vw;
+  }
+  100% {
+    margin-left: 0;
+  }
 }
