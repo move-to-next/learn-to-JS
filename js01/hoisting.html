@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("--호이스팅 : 변수의 선언문이 최상단으로 끌러올려지는 현상--")
+
+        console.log("----var를 사용했을때 호이스팅O----")
+        console.log(abc);
+        var abc = 123; // abc = 123 
+
+        console.log("----let, const를 사용했을때 호이스팅X----")
+        // console.log(def);
+        // let def = 456; // 오류생김
+        // console.log(ghi);
+        // const ghi = 789; // 오류생김
+        console.log("let과 const는 TDZ때문에 호이스팅됬지만 안되는거 처럼 나옴")
+    </script>
+</body>
+</html>

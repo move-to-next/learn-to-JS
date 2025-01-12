@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 전역 스코프
+        var one = 1111;
+        let two = 2222;
+        const three = 3333;
+
+        // 함수 스코프
+        function scope() {
+            var scope1 = 1212;
+            let scope2 = 2323;
+            const scope3 = 3434;
+            console.log("전역변수 불러오기" ,one, two, three);
+            console.log("험수변수 불러오기" ,scope1, scope2, scope3);
+        }
+        scope();
+        console.log("전역스코프에서 함수스코프의 변수 불러오기");
+        // console.log(scope1,scope2,scope3);
+
+        //블록 스코프
+        {
+            console.log("전역변수 불러오기" ,one, two, three);
+
+            var scope4 = 4545;
+            let scope5 = 5656;
+            const scope6 = 6767;
+            console.log("블록변수 불러오기", scope4, scope5, scope6);
+        }
+        // console.log("블록변수 불러오기", scope4, scope5, scope6);
+    </script>
+</body>
+</html>
