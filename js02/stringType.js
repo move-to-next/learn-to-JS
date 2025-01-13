@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <script>
-        document.write("원시타입의 특징" + "<br>");
+document.write("원시타입의 특징" + "<br>");
         document.write("1.문자열은 0번째 부터 시작한다." + "<br>");
         let coffee = "ice americano";
         document.write("4번째글자:a " + coffee[4] + "<br>");
@@ -96,6 +87,3 @@
         document.write("13. padStart(): "+"자릿수에 맞춰 인자로 전달받은 문자열을 채운다."+"<br>");
         let count = "714";
         document.write("내생일은 "+count+" 4자릿수로 하면 "+count.padStart(4,'0')+"<br>"+"<br>");
-    </script>
-</body>
-</html>
