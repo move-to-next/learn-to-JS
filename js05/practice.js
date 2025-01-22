@@ -9,4 +9,9 @@ b.forEach(function(item,index){
     a[index]=index;
 })
 
-document.write("reduce 활용"+)
+document.write("reduce 활용"+"<br>");
+let c = [12,34,56,78,90];
+let result = c.reduce((a, c) => {
+    document.write(`${a},${c}`+"<br>");
+    return a + c;
+},0);
