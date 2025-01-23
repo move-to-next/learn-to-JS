@@ -13,5 +13,9 @@ document.write(add2 + "<br>"+"<br>");
 document.write("for..of 활용"+"<br>");
 let words = ["한국", "미국", "일본", "영국", "독일"];
 for (let country of words){
-    document.write(country);
-}
+    document.write(country+"<br>");
+};
+let brands = ["벤츠", "아우디", "샤넬", "디올", "현대"];
+for (let plus of brands){
+    document.write(plus+"<br>");
+};
