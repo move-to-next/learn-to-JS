@@ -12,11 +12,11 @@ let small = numbers[0];
 
 for(let i = 1; i < numbers.length; i++){
     if(numbers[i] > big){
-        big = numbers[1];
+        big = numbers[i];
     };
 
     if(numbers[i] < small){
-        small = numbers[1];
+        small = numbers[i];
     };
 };
 
