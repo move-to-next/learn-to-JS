@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul,ol,li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+/* 텍스트 숨기기기 */
+.hide {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    font-size: 1px;
+}
+
+
+/* 계산기 본체 */
+main{
+    width: 100%;
+    height: 100%;
+}
+main > .calculator{
+    position:relative;
+    height: 100vh;
+}
+.calculator > .calculator-body{
+    position:relative;
+    width: 350px;
+    height: 500px;
+    top: 50%;
+    left: 50%;
+    border-radius: 20px;
+    padding: 20px;
+    transform: translate(-50%, -50%);
+    background-color: blueviolet;
+}
+.calculator-body > .cal-screen{
+    position: relative;
+    width: 100%;
+    height: 40%;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #fff;
+}
+.cal-screen > .cal-text{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    font-family: "Noto Sans korean";
+    font-size: 24px;
+    font-weight: bold;
+}
+.calculator-body > .cal-button{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.cal-button > .cal-number{
+    position: relative;
+    width: 70%;
+    padding: 20px 0;
+}
+.cal-number > ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+.cal-number > ul > li > button{
+    padding: 24px 28px;
+    border: none;
+    border-radius: 10px;
+}
+.cal-number > ul > li > button > span{
+    font-family: "Noto sans korean";
+    font-size: 20px;
+}
+.cal-button > .cal-operator{
+    position: relative;
+    width: 28%;
+    padding: 20px 0;
+}
+.cal-operator > ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+}
+.cal-operator > ul > li > button{
+    width: 40px;
+    padding: 24px 0;
+    border: none;
+    border-radius: 10px;
+}
+.cal-operator > ul > li > button > span{
+    font-family: "Noto sans korean";
+    font-size: 20px;
+}
+.cal-operator > ul > li:last-child > button{
+    width: 86px;
+}
