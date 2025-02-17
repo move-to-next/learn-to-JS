@@ -105,3 +105,10 @@ main > .calculator{
 .cal-operator > ul > li:last-child > button{
     width: 86px;
 }
+.calculator-body > .reset{
+    position: relative;
+    margin: auto;
+    width: fit-content;
+    padding: 20px;
+    font-size: 20px;
+}
