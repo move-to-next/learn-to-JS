@@ -18,14 +18,31 @@ const multiply = document.querySelector(".multiply"); // 버튼 ×
 const division = document.querySelector(".division"); // 버튼 ÷
 const equal = document.querySelector(".equal"); // 버튼 =
 
-// 코드 입력
-// no1.addEventListener("click", () => {
-    // calText.textContent = "1";
-// })
-// no2.addEventListener("click", () => {
-    // calText.textContent = "2";
-// })
-// 
-// if(calText.textContent){
-    // for(let f = 0, f < 9, f++){}
-// }
+//코드 입력
+no1.addEventListener("click", () => {
+    calText.textContent = "1";
+})
+no2.addEventListener("click", () => {
+    calText.textContent = "2";
+})
+no3.addEventListener("click", () => {
+    calText.textContent = "3";
+})
+no4.addEventListener("click", () => {
+    calText.textContent = "4";
+})
+no5.addEventListener("click", () => {
+    calText.textContent = "5";
+})
+no6.addEventListener("click", () => {
+    calText.textContent = "6";
+})
+no7.addEventListener("click", () => {
+    calText.textContent = "7";
+})
+no8.addEventListener("click", () => {
+    calText.textContent = "8";
+})
+no9.addEventListener("click", () => {
+    calText.textContent = "9";
+})
