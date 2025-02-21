@@ -49,6 +49,7 @@ const equal = document.querySelector(".equal"); // 버튼 =
 // }) 이렇게는 너무 기니까
 
 const numbers = [no1, no2, no3, no4, no5, no6, no7, no8, no9];
+const calculate = [plus, minus, multiply, division];
 
 numbers.forEach((btn, index) => {
     btn.addEventListener("click",() => {
@@ -56,9 +57,15 @@ numbers.forEach((btn, index) => {
     });
 });
 
+plus.addEventListener("click", () => {
+    calText.textContent += "+";
+})
+
 equal.addEventListener("click", () => {
-    Number(calText.textContent);
-}); // 화면에 나온 숫자를 문자열 => 숫자열로 변경
+    const number = calText.textContent.split("+").map(Number); // +를 기준으로 숫자를 나눠 새로운 배열을 만듦. 그런다음 숫자로 변환
+    const result = number.reduce((a,c) => a + c, 0); // reduce를 활용해 값을 계산함.
+    calText.textContent = result; // calText의 textContent를 계산된 값으로 할당함.
+});
 
 reset.addEventListener("click", () => {
     calText.textContent = "";
