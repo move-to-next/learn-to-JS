@@ -49,7 +49,6 @@ const equal = document.querySelector(".equal"); // 버튼 =
 // }) 이렇게는 너무 기니까
 
 const numbers = [no1, no2, no3, no4, no5, no6, no7, no8, no9];
-const calculate = [plus, minus, multiply, division];
 
 numbers.forEach((btn, index) => {
     btn.addEventListener("click",() => {
@@ -59,12 +58,52 @@ numbers.forEach((btn, index) => {
 
 plus.addEventListener("click", () => {
     calText.textContent += "+";
+});
+
+multiply.addEventListener("cilck", () => {
+    calText.textContent += "*";
 })
 
+division.addEventListener("click", () => {
+    calText.textContent += "/";
+});
+
 equal.addEventListener("click", () => {
-    const number = calText.textContent.split("+").map(Number); // +를 기준으로 숫자를 나눠 새로운 배열을 만듦. 그런다음 숫자로 변환
-    const result = number.reduce((a,c) => a + c, 0); // reduce를 활용해 값을 계산함.
-    calText.textContent = result; // calText의 textContent를 계산된 값으로 할당함.
+    const number = calText.textContent.split(/([+\-*/])/);
+    const result = Number(numbers[0]);
+
+    for(let i = 1; i < numbers.length; i += 2) {
+        const operator = numbers[i];
+        const currentNum = Number(numbers[i + 1]);
+
+        if(operator === "*" || operator === "/"){
+            const prevNum = result;
+            if(operator === "*"){
+                result = prevNum * currentNum;
+            } else if(operator === "/") {
+                if(currentNum === 0) {
+                    calText.textContent = "Error: 0으로 나눌 수 없습니다.";
+                    return;
+                }
+                result = prevNum / currentNum;
+            }
+            numbers[i - 1] = result;
+            numbers[i] = "+";
+            numbers[i + 1] = "0";
+        }
+    }
+
+    result = Number(numbers[0]);
+    for(let i = 1; i < numbers.length; i += 2){
+        const operator = numbers[i];
+        const num = Number(numbers[i + 1]);
+
+        if(operator === "+") result += num;
+        if(operator === "-") result -= num;
+    }
+
+    result = Math.round(result * 1000000) / 1000000;
+    calText.textContent = result;
 });
 
 reset.addEventListener("click", () => {
