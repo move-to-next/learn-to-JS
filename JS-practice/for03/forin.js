@@ -35,15 +35,33 @@ console.log(average);
 
 
 // 90점 이상인 학생들의 이름을 배열로 나열
-
-let bestScore = [];
+let bestScore = []; // 빈 배열 생성
 
 for (let student in scores){
-    if(scores[student] >= 90){
-        bestScore.push(student);
+    if(scores[student] >= 90){  // scores 객체요소중에 90점 넘는 숫자가 있으면
+        bestScore.push(student); // 해당 숫자(점수)를 가진 학생 이름을 빈 배열에 삽입
     }
 }
 
 console.log(bestScore);
 
-//
+
+// 가장 높은 점수와 낮은 점수를 구해보기
+const studentNames = Object.keys(scores);
+let highScore = studentNames[0]; // 높은 점수의 초기값 설정
+let rowScore = studentNames[0]; // 낮은 점수의 초기값 설정
+
+console.log(highScore); // 초기값 철수
+console.log(rowScore);  // 초기값 철수
+
+for(let score in scores){
+    if(scores[score] > scores[highScore]){  // 객체를 순회하면서 철수(85) < 영희(92) < 수진(95)
+        highScore = score;  // highScore은 수진
+    }
+    else if(scores[score] < scores[rowScore]){  // 객체를 순회하면서 철수(85) > 민수(78)
+        rowScore = score;   // rowScore은 민수
+    }
+};
+
+console.log(`높은점수 학생 : ${highScore} / 점수: ${scores[highScore]}`);
+console.log(`낮은점수 학생 : ${rowScore} / 점수: ${scores[rowScore]}`);
