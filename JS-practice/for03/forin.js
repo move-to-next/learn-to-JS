@@ -33,4 +33,17 @@ for (let student in scores){
 const average = totalScore / studentCount; // 평균값 변수 만들고 총 점수 / 학생 수
 console.log(average);
 
-// 
+
+// 90점 이상인 학생들의 이름을 배열로 나열
+
+let bestScore = [];
+
+for (let student in scores){
+    if(scores[student] >= 90){
+        bestScore.push(student);
+    }
+}
+
+console.log(bestScore);
+
+//
