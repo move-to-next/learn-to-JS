@@ -1,5 +1,4 @@
 // this 연습
-
 const desert = {
     type : "아이스크림",
     flavor : function(a){
@@ -17,8 +16,8 @@ const desert = {
 desert.flavor("choco");
 desert.flavor("와사비")
 
-// ----------------------------------------------------
 
+// 생성자 함수 호출
 function Number(pen){
     this.pen = pen;
     this.buyPen = function () {
@@ -29,3 +28,15 @@ function Number(pen){
 const pen = new Number(5);
 
 console.log(`펜 ${pen.pen}자루에 ${pen.buyPen()}원`);
+
+
+// 메서드 호출
+const itsMe = {
+    myName: "김재은",
+    koreanAge : 31,
+    originalAge(){
+        return this.koreanAge - 2;
+    }
+}
+
+console.log(`저의 이름은 ${itsMe.myName}이고, 나이는 ${itsMe.koreanAge}살이고, 만 나이는 ${itsMe.originalAge()}살 입니다.`);
