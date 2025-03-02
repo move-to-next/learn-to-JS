@@ -43,31 +43,25 @@ movie
 
 
 
-
-
-
-
-
-
-
-
-// // 지정된 시간(밀리초) 후에 resolve되는 Promise를 반환하는 함수
-// function wait(ms) {
-//     const requestObj = new Promise((resolve, reject) => {
-
-//     })
-//   }
+// 지정된 시간(밀리초) 후에 resolve되는 Promise를 반환하는 함수
+function wait(ms) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("안녕하세요")
+        }, ms) // ms 밀리초 이후에 resolve되면 안녕하세요 출력.
+    })
+  }
   
-//   // 테스트 코드
-//   console.log("시작");
+  // 테스트 코드
+  document.write("시작"+"<br>");
   
-//   wait(2000)
-//     .then(() => {
-//       console.log("2초 후 실행");
-//       return wait(1000);
-//     })
-//     .then(() => {
-//       console.log("추가 1초 후 실행");
-//     });
+  wait(2000)
+    .then((message) => {
+      document.write(message + " 2초 후 실행"+"<br>");
+      return wait(1000);
+    })
+    .then((message) => {
+      document.write(message + " 추가 1초 후 실행"+"<br>");
+    });
   
-//   console.log("wait 함수 호출 후 (비동기 실행)");
+  document.write("wait 함수 호출 후 (비동기 실행)");
