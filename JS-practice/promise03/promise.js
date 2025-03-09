@@ -34,22 +34,35 @@ const products = {
   }
   
   // 3. 결제를 처리하는 함수 (Promise 반환)
-  function processPayment(product) {
-    // 이 함수를 구현하세요
-    // - 50% 확률로 결제 성공 또는 실패 (랜덤으로 구현)
-    // - 성공하면 resolve로 영수증 정보 반환
-    // - 실패하면 reject로 결제 실패 메시지 반환
-  }
-  
-  // 테스트 코드
-  function orderProduct(productId) {
-    // Promise 체인을 이용해 전체 주문 과정을 구현하세요
-    // findProduct -> addToCart -> processPayment 순서로 진행
-    // 각 단계의 결과를 콘솔에 출력
-    // 에러 발생 시 적절한 에러 메시지 출력
-  }
-  
-  // 주문 테스트 - 아래 세 가지 경우를 테스트해보세요
-  orderProduct('p1');  // 존재하는 상품, 재고 있음
-  orderProduct('p3');  // 존재하는 상품, 재고 없음
-  orderProduct('p5');  // 존재하지 않는 상품
+function processPayment(product) {
+  return new Promise((resolve, reject) => {
+    // 50% 확률로 성공 또는 실패
+    const isSuccessful = Math.random() < 0.5;
+    
+    if (isSuccessful) {
+      // 결제 성공: 영수증 정보 반환
+      const receipt = {
+        productId: product.id || '알 수 없음',
+        productName: product.name || '알 수 없음',
+        price: product.price || 0,
+        timestamp: new Date().toISOString()
+      };
+      resolve(receipt);
+    } else {
+      // 결제 실패: 오류 메시지 반환
+      const productName = product.name || '상품';
+      reject(new Error(`${productName} 결제에 실패했습니다.`));
+    }
+  });
+}
+
+const productId = 'p1';
+const product = { ...products[productId], id: productId };
+
+processPayment(product)
+  .then(receipt => {
+    console.log('결제 성공:', receipt);
+  })
+  .catch(error => {
+    console.error('결제 실패:', error.message);
+  });
