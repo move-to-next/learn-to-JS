@@ -1,0 +1,19 @@
+/*
+문제: 온라인 쇼핑몰 장바구니 시스템
+
+아래 요구사항에 맞게 프로토타입을 활용하여 코드를 작성하세요:
+
+1. Product 생성자 함수를 만들고, 상품 ID(id), 이름(name), 가격(price)을 속성으로 가집니다.
+2. Product의 프로토타입에 getInfo() 메서드를 추가하여 상품 정보를 반환하도록 합니다.
+3. DiscountProduct 생성자 함수를 만들고, Product를 상속받도록 합니다. 추가로 할인율(discountRate) 속성을 가집니다.
+4. DiscountProduct의 프로토타입에 getFinalPrice() 메서드를 추가하여 할인된 최종 가격을 계산하도록 합니다.
+5. ShoppingCart 생성자 함수를 만들고, 상품 목록(items)과 총액(totalPrice)을 속성으로 가집니다.
+6. ShoppingCart의 프로토타입에 다음 메서드들을 추가하세요:
+   - addItem(product): 장바구니에 상품을 추가하고 총액을 업데이트합니다.
+   - removeItem(productId): 장바구니에서 상품을 제거하고 총액을 업데이트합니다.
+   - getCartSummary(): 장바구니에 담긴 모든 상품 정보와 총액을 반환합니다.
+
+코드를 구현해보세요!
+*/
+
+// 여기에 코드 작성
