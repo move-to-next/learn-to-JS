@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.clock{
+    position: relative;
+    height: 100vh;
+}
+.clock-container{
+    position: absolute;
+    padding:30vh 30vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 10px solid #f1a;
+    border-radius: 100%;
+    background-color: #dfa;
+}
+.clock-container-contents > .clock-center{
+    position: absolute;
+    padding: 30px 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    background-color: #f1a;
+}
+.clock-container-contents > .clock-second{
+    position: absolute;
+    width: 5px;
+    height: 200px;
+    transform: translate(-50%, -100%) rotate(10deg);
+    transform-origin: center bottom;
+    background-color: #96002d;
+}
