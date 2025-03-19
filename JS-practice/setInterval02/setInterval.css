@@ -9,7 +9,7 @@
 }
 .clock-container{
     position: absolute;
-    padding:30vh 30vw;
+    padding:300px 300px;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
@@ -17,7 +17,61 @@
     border-radius: 100%;
     background-color: #dfa;
 }
-.clock-container-contents > .clock-center{
+.clock-container-contents > .clock-number{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* 시간 숫자 위치 조정 */
+.clock-number > p{
+    position: absolute;
+    text-align: center;
+    font-family: "S-Core Dream 6";
+    font-size: 3em;
+    font-weight: 700;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.clock-number > .clock_12{
+    transform: translate(-50%, -400%);
+}
+.clock-number > .clock_1{
+    transform: translate(360%, -350%);
+}
+.clock-number > .clock_2{
+    transform: translate(620%, -220%);
+}
+.clock-number > .clock_3{
+    transform: translate(750%, -50%);
+}
+.clock-number > .clock_4{
+    transform: translate(620%, 120%);
+}
+.clock-number > .clock_5{
+    transform: translate(350%, 250%);
+}
+.clock-number > .clock_6{
+    transform: translate(-50%, 300%);
+}
+.clock-number > .clock_7{
+    transform: translate(-450%, 250%);
+}
+.clock-number > .clock_8{
+    transform: translate(-700%, 120%);
+}
+.clock-number > .clock_9{
+    transform: translate(-850%, -50%);
+}
+.clock-number > .clock_10{
+    transform: translate(-380%, -220%);
+}
+.clock-number > .clock_11{
+    transform: translate(-270%, -350%);
+}
+
+.clock-container-contents > .clock-hand  > .clock-center{
     position: absolute;
     padding: 30px 30px;
     top: 50%;
@@ -26,11 +80,31 @@
     border-radius: 100%;
     background-color: #f1a;
 }
-.clock-container-contents > .clock-second{
+
+/* 시간의 시침(hour-hand)설정 */
+.clock-container-contents > .clock-hand > .clock-hour-hand{
     position: absolute;
-    width: 5px;
-    height: 200px;
-    transform: translate(-50%, -100%) rotate(10deg);
+    width: 8px;
+    height: 100px;
+    transform: translate(-50%, -100%);
     transform-origin: center bottom;
-    background-color: #96002d;
+    background-color: #611c31;
+}
+/* 시간의 분침(minute-hand)설정 */
+.clock-container-contents > .clock-hand > .clock-minute-hand{
+    position: absolute;
+    width: 6px;
+    height: 150px;
+    transform: translate(-50%, -100%);
+    transform-origin: center bottom;
+    background-color: #d400ff;
+}
+/* 시간의 초침(second-hand)설정 */
+.clock-container-contents > .clock-hand > .clock-second-hand{
+    position: absolute;
+    width: 4px;
+    height: 200px;
+    transform: translate(-50%, -100%);
+    transform-origin: center bottom;
+    background-color: #235eff;
 }
